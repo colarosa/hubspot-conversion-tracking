@@ -15,6 +15,7 @@ This script enables seamless tracking of HubSpot form submissions using the `dat
 
 1. Copy and paste the script below into the `<head>` or `<body>` section of your website where the HubSpot forms are used:
    ```html
+
    <script>
        // Listen for messages sent to the window object
        window.addEventListener("message", function(event) {
