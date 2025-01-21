@@ -1,0 +1,19 @@
+<script>
+    // Listen for messages sent to the window object
+    window.addEventListener("message", function(event) {
+        // Check if the event data matches the desired HubSpot form submission callback
+        if (!(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmitted')) return;
+
+        // Initialize the dataLayer array if it doesn't already exist
+        window.dataLayer = window.dataLayer || [];
+
+        // Push the HubSpot form submission data into the dataLayer for analytics tracking
+        dataLayer.push({
+            event: 'hubspot_form_submit', // Custom event name for form submission
+            formId: event.data.id, // The unique ID of the form
+            conversionId: event.data.data.conversionId, // Conversion ID (if applicable)
+            formGuid: event.data.data.formGuid, // GUID associated with the form
+            inputs: event.data.data.submissionValues // Form submission inputs
+        });
+    });
+</script>
