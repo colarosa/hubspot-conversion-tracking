@@ -13,7 +13,10 @@ This script enables seamless tracking of HubSpot form submissions using the `dat
 
 ## 🚀 Installation
 
-1. Copy and paste the script below into the `<head>` or `<body>` section of your website where the HubSpot forms are used:
+1. Copy and paste the script below in to a custom HTML tag, fire it on all pages.
+2. Create a event trigger in GTM and give it a value of hubspot_form_submit
+3. Fire your conversion tracking taging using this event trigger. 
+
    ```html
 
    <script>
@@ -35,3 +38,4 @@ This script enables seamless tracking of HubSpot form submissions using the `dat
            });
        });
    </script>
+
